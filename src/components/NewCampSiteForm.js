@@ -14,6 +14,7 @@ const NewCampSiteForm = () => {
           <select name="fire-ban" id="fire-ban">
             <option value="yes">Yes</option>
             <option value="no">No</option>
+            <option value="unknown">Unknown</option>
           </select>
         </div>
         <button type="submit">Add Camp Site</button>

@@ -1,68 +1,219 @@
 {
-    "states" [
+    "campSites": [
         {
-            "id": 1,
             "state": "Washington",
-            "city":"Gibson Creek",
-            "name": "Wolf Bar",
-            "cost": "Free",
-            "period": "14 Days",
-            "fire": true ,
-            "gps": "47.59934542, -123.61948382",
-            "water": false,
-            "reservations": "Reservable"
-        }
+            "sites": [
+                {
+                    "id": 1,
+                    "city":"Gibson Creek",
+                    "name": "Wolf Bar",
+                    "cost": "Free",
+                    "period": "14 Days",
+                    "fire": true ,
+                    "gps": "47.59934542, -123.61948382",
+                    "water": false,
+                    "reservations": true,
+                    "additional info": "Bear canisters recommended. No toilets - pack it out!",
+                    "image": "https://hikingproject.com/assets/photos/hike/7067682_medium_1583556454.jpg?cache=1673662033"
+                },
+                {
+                    "id": 2,
+                    "city":"Farris",
+                    "name": "Chumstick Mountain",
+                    "cost": "Free",
+                    "period": "14 Days",
+                    "fire": true,
+                    "gps": "47.633281, -120.456867",
+                    "water": false,
+                    "reservations": false,
+                    "additional info": "Very windy after the sun goes down. Open seasonally.",
+                    "image": "https://photos.thedyrt.com/stock/states/wa.jpg?width=1200&height=630&fit=crop&auto=webp"
+                },
+                {
+                    "id": 3,
+                    "city":"Methow",
+                    "name": "Cooper Mnt Road",
+                    "cost": "Free",
+                    "period": "14 Days",
+                    "fire": true,
+                    "gps": "48.088689, -120.229147",
+                    "water": false,
+                    "reservations": false,
+                    "additional info": "All trash and waste must be packed out. Campfires are not allowed at these sites during high fire danger.",
+                    "image": "https://photos.thedyrt.com/photo/1121321/media/cooper-mnt-rd-dispersed-camping_e8ef66d4-1b01-462b-820d-e3116eb34899.jpg?auto=webp&width=1972"
+                },
+                {
+                    "id": 4,
+                    "city":"Cushman Dam",
+                    "name": "Enchanted Valley",
+                    "cost": "15",
+                    "period": "14 Days",
+                    "fire": true,
+                    "gps": "47.67236227, -123.38935867",
+                    "water": true,
+                    "reservations": false,
+                    "additional info": "Toilets available and bear wires galore.",
+                    "image": "https://photos.thedyrt.com/photo/25284/photo/enchanted-valley_11362fa2f61da588abcdfea255fd144b.jpeg?auto=webp&width=1972"
+                },
+                {
+                    "id": 5,
+                    "city":"Scenic",
+                    "name": "Old Cascades Highway",
+                    "cost": "Free",
+                    "period": "14 Days",
+                    "fire": true,
+                    "gps": "47.718439, -121.208906",
+                    "water": false,
+                    "reservations": false,
+                    "additional info": "No toilets available. Dispersed camping is road side.",
+                    "image": "https://photos.thedyrt.com/photo/557403/media/old-cascades-highway-dispersed_68f9260e-0116-4dfa-b657-c178b41d5625.heic?auto=webp&width=1972"
+                }
+            ]
+        },
         {
-            "id": 2,
-            "state": "Washington",
-            "city":"Farris",
-            "name": "Chumstick Mountain Dispersed Camping",
-            "cost": "Free",
-            "period": "14 Days",
-            "fire": true,
-            "gps": "47.633281, -120.456867",
-            "water": false,
-            "reservations": "No"
-        }
+            "state": "California",
+            "sites": [
+            {
+                "id": 6,
+                "city":"Mather",
+                "name": "Hetch Hetchy",
+                "cost": "8",
+                "period": "Overnight only",
+                "fire": true,
+                "gps": "37.9439, -119.7861",
+                "water": true,
+                "reservations": false,
+                "additional info": "Permit required, first come/first server, features trash, picnic tables, drinking water, toilets, and firepits",
+                "image": "https://photos.thedyrt.com/photo/36192/photo/hetch-hetchy_5b9bce518dd27f9ea44e41d700404984.jpeg?crop=7%3A5&auto=webp&width=838"
+            },
+            {
+                "id": 7,
+                "city":"Raffetto",
+                "name": "Union Valley Reservoir",
+                "cost": "Free",
+                "period": "10 days",
+                "fire": true,
+                "gps": "38.8714, -120.4098",
+                "water": false,
+                "reservations": false,
+                "additional info": "No bathrooms, no trash service, Pack It In - Pack It Out",
+                "image": "https://photos.thedyrt.com/photo/786113/media/union-valley-reservoir-dispersed-camping_0330766d-4375-45ad-9e83-20de18c35443.jpg?crop=1%3A1%2Csmart&auto=webp&width=838"
+            },
+            {
+                "id": 8,
+                "city":"Crestview",
+                "name": "Inyo National Forest",
+                "cost": "Free",
+                "period": "28 days per six months",
+                "fire": true,
+                "gps": "36.9695, -118.3479",
+                "water": false,
+                "reservations": false,
+                "additional info": "Campfire permit required, some sites may have a primitive fire ring, wilderness permit needed to backpack in",
+                "image": "https://photos.thedyrt.com/photo/51115/photo/inyo-national-forest-dispersed-camping_4fa6189aa14aa9964a24a5464a12d3e8.jpg?auto=webp&width=1972"
+            },
+            {
+                "id": 9,
+                "city":"Lone Pine",
+                "name": "Alabama Hills",
+                "cost": "Free",
+                "period": "7 days in a 28 day period, no more than 14 days in a calendar year",
+                "fire": true,
+                "gps": "36.53754444, -118.1087469",
+                "water": false,
+                "reservations": false,
+                "additional info": "Campfire permit required, portapotties available",
+                "image": "https://photos.thedyrt.com/photo/670038/media/california-alabama-hills-recreation-area_f1f49000-549c-4e80-8311-f003ad443e68.jpg?crop=7%3A5&auto=webp&width=838"
+            },
+            {
+                "id": 10,
+                "city":"Independence",
+                "name": "Independence BLM Dispersed",
+                "cost": "Free",
+                "period": "14 days",
+                "fire": true,
+                "gps": "36.78113535263094, -118.22679428486174",
+                "water": false,
+                "reservations": false,
+                "additional info": "Zero shade, zero amenities. Keep it clean, and pack it out!",
+                "image": "https://photos.thedyrt.com/photo/670038/media/california-alabama-hills-recreation-area_f1f49000-549c-4e80-8311-f003ad443e68.jpg?crop=7%3A5&auto=webp&width=838"
+            }
+            ]
+        },
         {
-            "id": 3,
-            "state": "Washington",
-            "city":"Methow",
-            "name": "Cooper Mnt Rd Dispersed Camping",
-            "cost": "Free",
-            "period": "14 Days",
-            "fire": true,
-            "gps": "48.088689, -120.229147",
-            "water": false,
-            "reservations": "No"
-        }
-        {
-            "id": 4,
-            "state": "Washington",
-            "city":"Cushman Dam",
-            "name": "Enchanted Valley",
-            "cost": "15$",
-            "period": "14 Days",
-            "fire": true,
-            "gps": "47.67236227, -123.38935867",
-            "water": true,
-            "reservations": "No"
-        }
-        {
-            "id": 5,
-            "state": "Washington",
-            "city":"Scenic",
-            "name": "Old Cascades Highway Dispersed",
-            "cost": "Free",
-            "period": "14 Days",
-            "fire": true,
-            "gps": "47.718439, -121.208906",
-            "water": false,
-            "reservations": "No"
+            "state": "Oregon",
+            "sites": [
+            {
+                "id": 11,
+                "state": "Oregon",
+                "city":"Axtell",
+                "name": "Suislaw National Forest",
+                "cost": "Free",
+                "period": "14 days",
+                "fire": true,
+                "gps": "44.277774007357586, -124.04817423874769",
+                "water": false,
+                "reservations": false,
+                "additional info": "Each area has different regulations as to where you can camp.",
+                "image": "https://preview.redd.it/d7nkza6qux1z.jpg?auto=webp&s=54206e0c20eeb5ed6af92c75a97d28b6e30f7ad8"
+            },
+            {
+                "id": 12,
+                "state": "Oregon",
+                "city":"Wilson",
+                "name": "Tillamook State Forest",
+                "cost": "Free",
+                "period": "14 days",
+                "fire": true,
+                "gps": "45.607674, -123.572691",
+                "water": false,
+                "reservations": false,
+                "additional info": "Please respect seasonal fire bans. Vault toilet, but no trash services - pack it in, pack it out!",
+                "image": "https://preview.redd.it/d7nkza6qux1z.jpg?auto=webp&s=54206e0c20eeb5ed6af92c75a97d28b6e30f7ad8"
+            },
+            {
+                "id": 13,
+                "state": "Oregon",
+                "city":"Inglish",
+                "name": "Beaver Falls Trailhead",
+                "cost": "Free",
+                "period": "14 days",
+                "fire": true,
+                "gps": "46.10330377134348, -123.12962050882264",
+                "water": false,
+                "reservations": false,
+                "additional info": "Pull off with room for 7-10 vehicles. Beautiful hiking trails all arouns!",
+                "image": "https://photos.thedyrt.com/photo/801321/media/beaver-falls-trailhead_4abd563c-251e-4bd0-8b7f-d4e1f3d9fd69.jpg?auto=webp&width=1972"
+            },
+            {
+                "id": 14,
+                "state": "Oregon",
+                "city":"Horton",
+                "name": "Hult Pond",
+                "cost": "Free",
+                "period": "14 days",
+                "fire": true,
+                "gps": "44.241184, -123.495426",
+                "water": false,
+                "reservations": false,
+                "additional info": "This recreation site is popular for activities such as fishing, camping, hiking, horseback riding, and scenic driving.",
+                "image": "https://cdn.recreation.gov/public/2019/04/30/23/16/1779_1fc7813f-e77a-43ac-afb1-92d2dc3ec945_700.jpeg"
+            },
+            {
+                "id": 15,
+                "state": "Oregon",
+                "city":"Prospect",
+                "name": "USFS Rogue River",
+                "cost": "Free",
+                "period": "14 days",
+                "fire": false,
+                "gps": "42.83044492265611, -122.5007141693149",
+                "water": false,
+                "reservations": false,
+                "additional info": "Be bear aware - a fed bear is a dead bear. Do your part to protect bears and people.",
+                "image": "https://photos.thedyrt.com/photo/677414/media/usfs-rogue-river-dispersed_92fe7ac7-5b8b-4430-b60e-85ecf32b5884.jpg?auto=webp&width=474"
+            }
+         ]
         }
     ]
-
-
-
-    }
 }

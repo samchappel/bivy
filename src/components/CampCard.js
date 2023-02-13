@@ -3,13 +3,14 @@ import React from "react";
 function CampCard() {
   return (
     <li className="card">
-      <img src={"https://via.placeholder.com/400"} alt={"plant name"} />
-      <h4>{"plant name"}</h4>
-      <p>Price: {"plant price"}</p>
+      <img src={"https://cdn.pixabay.com/photo/2021/10/09/00/15/landscape-6692712__340.jpg"} alt={"camp name"} />
+      <h4>Site Name</h4>
+      <p>Cost: </p>
+      <p>Camping Period: </p>
       {true ? (
-        <button className="primary">In Stock</button>
+        <p className="fire-logo">In Stock</p>
       ) : (
-        <button>Out of Stock</button>
+        <p>Out of Stock</p>
       )}
     </li>
   );
