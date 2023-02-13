@@ -1,0 +1,68 @@
+{
+    "states" [
+        {
+            "id": 1,
+            "state": "Washington",
+            "city":"Gibson Creek",
+            "name": "Wolf Bar",
+            "cost": "Free",
+            "period": "14 Days",
+            "fire": true ,
+            "gps": "47.59934542, -123.61948382",
+            "water": false,
+            "reservations": "Reservable"
+        }
+        {
+            "id": 2,
+            "state": "Washington",
+            "city":"Farris",
+            "name": "Chumstick Mountain Dispersed Camping",
+            "cost": "Free",
+            "period": "14 Days",
+            "fire": true,
+            "gps": "47.633281, -120.456867",
+            "water": false,
+            "reservations": "No"
+        }
+        {
+            "id": 3,
+            "state": "Washington",
+            "city":"Methow",
+            "name": "Cooper Mnt Rd Dispersed Camping",
+            "cost": "Free",
+            "period": "14 Days",
+            "fire": true,
+            "gps": "48.088689, -120.229147",
+            "water": false,
+            "reservations": "No"
+        }
+        {
+            "id": 4,
+            "state": "Washington",
+            "city":"Cushman Dam",
+            "name": "Enchanted Valley",
+            "cost": "15$",
+            "period": "14 Days",
+            "fire": true,
+            "gps": "47.67236227, -123.38935867",
+            "water": true,
+            "reservations": "No"
+        }
+        {
+            "id": 5,
+            "state": "Washington",
+            "city":"Scenic",
+            "name": "Old Cascades Highway Dispersed",
+            "cost": "Free",
+            "period": "14 Days",
+            "fire": true,
+            "gps": "47.718439, -121.208906",
+            "water": false,
+            "reservations": "No"
+        }
+    ]
+
+
+
+    }
+}
