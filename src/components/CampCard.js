@@ -1,17 +1,50 @@
-import React from "react";
+import React, { useState } from "react";
+import CampDetails from "./CampDetails";
 
-function CampCard() {
+function CampCard({ site }) {
+  const { id, name, city, state, cost, period, fire, gps, water, reservations, image, info } = site
+
+  const [showDetails, setShowDetails] = useState(false);
+
+  const [ isFavorite, setIsFavorite ] = useState(false)
+
+  function toggleFavorite() {
+    setIsFavorite((currentState) => !currentState)
+  }
+
+  function handleDetailsClick() {
+    console.log('clicked!')
+    setShowDetails((currentState) => !currentState);
+  }
+
+    const fireBan = fire ? <span className="fire">🔥</span> : <span className="fire-ban">😎</span>
+
+    const favorite = isFavorite ? (
+      <button onClick={toggleFavorite} className="emoji-button favorite active">★</button>
+    ) : (
+      <button onClick={toggleFavorite} className="emoji-button favorite">☆</button>
+    )
+
+
   return (
     <li className="card">
-      <img src={"https://cdn.pixabay.com/photo/2021/10/09/00/15/landscape-6692712__340.jpg"} alt={"camp name"} />
-      <h4>Site Name</h4>
-      <p>Cost: </p>
-      <p>Camping Period: </p>
-      {true ? (
-        <p className="fire-logo">In Stock</p>
-      ) : (
-        <p>Out of Stock</p>
-      )}
+      <div className="image">
+        {fireBan}
+        <img src={image} alt={name} onClick={handleDetailsClick}/>
+      </div>
+      <div className="details">
+        {favorite}
+        <h3 className="center">{name}</h3>
+        <p className="center">{city}, {state}</p>
+        <p className="center">Cost: {cost}</p>
+        <p className="center">Camping Period: {period}</p>
+        {showDetails && <CampDetails 
+          gps={gps}
+          water={water}
+          reservations={reservations}
+          info={info}
+        /> }
+      </div>
     </li>
   );
 }

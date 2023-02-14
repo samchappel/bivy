@@ -10,7 +10,7 @@
   
   body {
     background-color: #BFAA72;
-    font-family: "Playfair Display", serif;
+    font-family: sans-serif;
   }
   
   h2 {
@@ -114,11 +114,12 @@
     border-bottom: 2px solid var(--green);
   }
   
-  .cards {
+  /* .cards {
     list-style: none;
-  }
+    background-color: #637F42;
+  } */
   
-  .card {
+  /* .card {
     margin: 1rem;
   }
   
@@ -128,9 +129,9 @@
   
   .card button {
     margin-top: 0.5rem;
-  }
+  } */
   
-  @media (min-width: 768px) {
+  /* @media (min-width: 768px) {
     .cards {
       display: flex;
       flex-wrap: wrap;
@@ -151,7 +152,7 @@
     .card {
       width: calc(20% - 2rem);
     }
-  }
+  } */
 
   /* @font-face {
     font-family: 'My Custom Font';
@@ -159,3 +160,92 @@
     font-weight: normal;
     font-style: normal;
   } */
+
+  .cards {
+    list-style: none;
+    display: flex;
+    flex-wrap: wrap;
+  }
+  
+  .card {
+    margin: 1rem;
+    border-radius: 5px;
+    width: 300px;
+    background-color: #645B16;
+    color: #BFAA72;
+    overflow: hidden;
+  }
+/* 
+  .card.expanded {
+    height:auto;
+  }
+
+  .additional-details {
+    display: none;
+  }
+  
+  .card.expanded .additional-details {
+    display: block;
+  } */
+
+
+  
+  .card .image {
+    height: 225px;
+    position: relative;
+    width: 300px;
+    display: flex;
+    justify-content: center;
+  }
+  
+  .card .image .fire {
+    position: absolute;
+    top: 0;
+    left: 0;
+    padding: 0.25rem;
+  }
+
+  .card .image .fire-ban {
+    position: absolute;
+    top: 0;
+    left: 0;
+    padding: 0.25rem;
+  }
+  
+  .card .image img {
+    max-width: 300px;
+    max-height: 225px;
+    width: auto;
+    height: auto;
+  }
+  
+  .card .details {
+    padding: 0.5rem;
+
+  }  .card .center {
+    text-align: center;
+  }
+  
+  .card .details strong {
+    font-family: serif;
+    font-size: 1rem;
+  }
+
+  .emoji-button {
+    border: none;
+    background: none;
+    padding: 0 0.25rem;
+    cursor: pointer;
+    text-align: left;
+  }
+  
+  .emoji-button.favorite {
+    color: transparent;
+    text-shadow: 0 0 0 gray;
+  }
+  
+  .emoji-button.favorite.active,
+  .emoji-button.favorite:hover {
+    text-shadow: 0 0 0 gold;
+    cursor: pointer;
+  }
