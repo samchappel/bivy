@@ -33,7 +33,11 @@ function CampCard({ site }) {
         <img src={image} alt={name} onClick={handleDetailsClick}/>
       </div>
       <div className="details">
-        {favorite}
+        {isFavorite ? (
+          <button onClick={toggleFavorite} className="emoji-button favorite active">★</button>
+        ) : (
+          <button onClick={toggleFavorite} className="emoji-button favorite">☆</button>
+        )}
         <h3 className="center">{name}</h3>
         <p className="center">{city}, {state}</p>
         <p className="center">Cost: {cost}</p>

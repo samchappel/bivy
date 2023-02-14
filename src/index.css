@@ -249,3 +249,16 @@
     text-shadow: 0 0 0 gold;
     cursor: pointer;
   }
+
+  .filter {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    padding: 1rem;
+  }
+  
+  .filter button {
+    margin: 0 1rem;
+  }
+
+  

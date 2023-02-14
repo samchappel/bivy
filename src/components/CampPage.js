@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import NewCampSiteForm from "./NewCampSiteForm";
 import CampList from "./CampList";
-import Search from "./Search";
+// import Search from "./Search";
 
 function CampPage() {
 
@@ -16,7 +16,6 @@ function CampPage() {
   return (
     <main>
       <NewCampSiteForm />
-      <Search />
       <CampList sites={sites} />
     </main>
   );
