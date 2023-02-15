@@ -4,17 +4,11 @@ import CampList from "./CampList";
 import Search from "./Search";
 import Header from "./Header";
 
-function CampPage() {
+function CampPage({ sites, setSites }) {
 
-  const [ sites, setSites ] = useState([]);
+  
   const [searchTerm, setSearchTerm] = useState("");
   const [selectedState, setSelectedState] = useState("All States");
-
-  useEffect(() => {
-    fetch('http://localhost:6001/campSites')
-    .then(response => response.json())
-    .then(data => setSites(data))
-  }, [])
 
   function updateSearchTerm(search) {
     setSearchTerm(search);
@@ -30,7 +24,6 @@ function CampPage() {
     const isPrice = site.cost <= numPriceSearch;
     return name.includes(search) || cost.includes(search) || city.includes(search) || state.includes(search) || isPrice;
   });
-
   
 
   return (
