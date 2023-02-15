@@ -1,25 +1,51 @@
 import React, { useState } from "react";
 import CampDetails from "./CampDetails";
 
-function CampCard({ site }) {
-  const { id, name, city, state, cost, period, fire, gps, water, reservations, image, info } = site
+function CampCard({ site, setSites }) {
+  const { id, name, city, state, cost, period, fire, gps, water, reservations, image, info, initialIsFavorite } = site
 
   const [showDetails, setShowDetails] = useState(false);
 
-  const [ isFavorite, setIsFavorite ] = useState(false)
+  const [ isFavorite, setIsFavorite ] = useState(initialIsFavorite)
 
   function toggleFavorite() {
-    setIsFavorite((currentState) => !currentState)
+    const updatedIsFavorite = !isFavorite;
+    
+    fetch(`http://localhost:6001/campSites/${id}`, {
+      method: 'PATCH',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify({
+        initialIsFavorite: updatedIsFavorite,
+      }),
+    })
+      .then((response) => {
+        if (response.ok) {
+          return response.json();
+        }
+        throw new Error('Failed to update favorite status');
+      })
+      .then((updatedSite) => {
+        setIsFavorite(updatedIsFavorite);
+        setSites((currentSites) =>
+          currentSites.map((site) =>
+            site.id === updatedSite.id ? updatedSite : site
+          )
+        );
+      })
+      .catch((error) => {
+        console.log('Error updating favorite status', error);
+      });
   }
 
   function handleDetailsClick() {
-    console.log('clicked!')
     setShowDetails((currentState) => !currentState);
   }
 
     const fireBan = fire ? <span className="fire">🔥</span> : <span className="fire-ban">😎</span>
 
-    const favorite = isFavorite ? (
+    const favorite = initialIsFavorite ? (
       <button onClick={toggleFavorite} className="emoji-button favorite active">★</button>
     ) : (
       <button onClick={toggleFavorite} className="emoji-button favorite">☆</button>
@@ -35,11 +61,7 @@ function CampCard({ site }) {
         <img src={image} alt={name} onClick={handleDetailsClick}/>
       </div>
       <div className="details">
-        {isFavorite ? (
-          <button onClick={toggleFavorite} className="emoji-button favorite active">★</button>
-        ) : (
-          <button onClick={toggleFavorite} className="emoji-button favorite">☆</button>
-        )}
+        {favorite}
         <h2 className="center">{name}</h2>
         <h3 className="center">{city}, {state}</h3>
         <br />

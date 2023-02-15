@@ -41,7 +41,7 @@ function App() {
             <About />
         </Route>
         <Route  path="/favorites">
-            <Favorites />
+            <Favorites sites={sites} />
         </Route>
         <Route path="/submit">
             <NewCampSiteForm  addSite={addSite} sites={sites} setSites={setSites} />

@@ -30,7 +30,7 @@ function CampPage({ sites, setSites }) {
     <main>
       <Header />
       <Search searchTerm={searchTerm} updateSearchTerm={updateSearchTerm} />
-      <CampList sites={filteredSites} selectedState={selectedState} setSelectedState={setSelectedState} />
+      <CampList sites={filteredSites} selectedState={selectedState} setSelectedState={setSelectedState} setSites={setSites} />
     </main>
   );
 }

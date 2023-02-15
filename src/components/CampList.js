@@ -1,13 +1,13 @@
 import React from "react";
 import CampCard from "./CampCard";
 
-function CampList({ sites, selectedState, setSelectedState }) {
+function CampList({ sites, selectedState, setSelectedState, setSites }) {
 
   const filteredSites = selectedState === 'All States'
   ? sites
   : sites.filter(site => site.state === selectedState);
 
-  const campCards = filteredSites.map((site) => (<CampCard key={site.id} site={site} />))
+  const campCards = filteredSites.map((site) => (<CampCard key={site.id} site={site} setSites={setSites} />))
 
 
   
