@@ -5,7 +5,7 @@ import { useHistory } from "react-router-dom";
 const initialSite = { city:"", state:"", name:"", cost:"", period:"", fire:true, gps:"", water:false, reservations:"", info:"", image:""}
 
 
-function NewCampSiteForm({ addSite }) {
+function NewCampSiteForm({ addSite, sites, setSites }) {
   const [ newCampSite, setNewCampSite] = useState(initialSite)
   let history = useHistory();
   
@@ -15,9 +15,30 @@ function NewCampSiteForm({ addSite }) {
   
   function handleSubmit(e){
     e.preventDefault();
-    addSite(newCampSite)
-    history.push("/CampPage")
- }
+    fetch('http://localhost:6001/campSites', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify(newCampSite)
+    })
+      .then(response => {
+        if (response.ok) {
+          history.push("/CampPage");
+        } else {
+          console.log('Error: ', response.statusText);
+        }
+      })
+      .catch(error => {
+        console.log('Error: ', error);
+      });
+  }
+
+  function addSite(newCampSite) {
+    const newCampSites = [...sites];
+    newCampSites.push(newCampSite);
+    setSites(newCampSites);
+  }
 
   return (
     <div id="form-wrapper">

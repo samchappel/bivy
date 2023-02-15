@@ -5,9 +5,10 @@ function NavBar() {
      
     return (
         <nav>
-            <Link to="/">Home</Link>
+            <Link to="/home">Home</Link>
             <Link to="/about">About</Link>
-            <Link to="/submit">Submit New Site</Link>
+            <Link to="/favorites">Favorites</Link>
+            <Link to="/submit">Add New Site</Link>
         </nav>
     );
 }

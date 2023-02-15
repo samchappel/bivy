@@ -6,6 +6,7 @@ import Home from "./Home"
 import About from "./About"
 import Nav from "./Nav"
 import NewCampSiteForm from "./NewCampSiteForm";
+import Favorites from "./Favorites";
 
 
 // function App() {              //I just commented out this code to add in the new code- we can add this back in
@@ -39,8 +40,11 @@ function App() {
         <Route  path="/about">
             <About />
         </Route>
+        <Route  path="/favorites">
+            <Favorites />
+        </Route>
         <Route path="/submit">
-            <NewCampSiteForm  addSite={addSite}/>
+            <NewCampSiteForm  addSite={addSite} sites={sites} setSites={setSites} />
         </Route>
         <Route path="/">
             <CampPage sites={sites} setSites={setSites} addSite={addSite}/>
