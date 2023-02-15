@@ -40,7 +40,6 @@ function CampCard({ site }) {
         )}
         <h3 className="center">{name}</h3>
         <p className="center">{city}, {state}</p>
-        <p className="center">Cost: {cost}</p>
         <p className="center">Camping Period: {period}</p>
         {showDetails && <CampDetails 
           gps={gps}

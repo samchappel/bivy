@@ -13,4 +13,4 @@ function CampDetails({ water, gps, reservations, info }) {
   )
 }
 
-export default CampDetails
+export default CampDetails;
