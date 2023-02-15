@@ -13,7 +13,6 @@ function CampList({ sites, selectedState, setSelectedState }) {
   
   return (
     <section>
-      <h2>Camp Sites</h2>
 
       <div className="filter">
         <button onClick={() => setSelectedState('All States')}>All States</button>
