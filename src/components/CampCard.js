@@ -25,6 +25,8 @@ function CampCard({ site }) {
       <button onClick={toggleFavorite} className="emoji-button favorite">☆</button>
     )
 
+    const displayCost = typeof cost === "string" && cost === "Free" ? "Free" : `$${cost}.00`;
+
 
   return (
     <li className="card">
@@ -40,6 +42,9 @@ function CampCard({ site }) {
         )}
         <h3 className="center">{name}</h3>
         <p className="center">{city}, {state}</p>
+        <p className="center">
+        Cost: {displayCost}
+        </p>
         <p className="center">Camping Period: {period}</p>
         {showDetails && <CampDetails 
           gps={gps}

@@ -15,10 +15,10 @@ function CampList({ sites }) {
         <button>Oregon</button>
         <button>California</button>
       </div>
-      <div className="searchbar">
+      {/* <div className="searchbar">
         <label htmlFor="search">Search Camp Sites:</label>
         <input type="text" placeholder="Search..." />
-      </div>
+      </div> */}
 
       <ul className="cards">{campCards}</ul>
     </section>
