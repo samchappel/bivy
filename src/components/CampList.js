@@ -1,19 +1,25 @@
 import React from "react";
 import CampCard from "./CampCard";
 
-function CampList({ sites }) {
+function CampList({ sites, selectedState, setSelectedState }) {
 
-  const campCards = sites.map((site) => (<CampCard key={site.id} site={site} />))
+  const filteredSites = selectedState === 'All States'
+  ? sites
+  : sites.filter(site => site.state === selectedState);
+
+  const campCards = filteredSites.map((site) => (<CampCard key={site.id} site={site} />))
+
+
   
   return (
     <section>
       <h2>Camp Sites</h2>
 
       <div className="filter">
-        <button>All States</button>
-        <button>Washington</button>
-        <button>Oregon</button>
-        <button>California</button>
+        <button onClick={() => setSelectedState('All States')}>All States</button>
+        <button onClick={() => setSelectedState('Washington')}>Washington</button>
+        <button onClick={() => setSelectedState('Oregon')}>Oregon</button>
+        <button onClick={() => setSelectedState('California')}>California</button>
       </div>
       {/* <div className="searchbar">
         <label htmlFor="search">Search Camp Sites:</label>

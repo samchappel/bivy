@@ -8,6 +8,7 @@ function CampPage() {
 
   const [ sites, setSites ] = useState([]);
   const [searchTerm, setSearchTerm] = useState("");
+  const [selectedState, setSelectedState] = useState("All States");
 
   useEffect(() => {
     fetch('http://localhost:6001/campSites')
@@ -36,7 +37,7 @@ function CampPage() {
     <main>
       <Header />
       <Search searchTerm={searchTerm} updateSearchTerm={updateSearchTerm} />
-      <CampList sites={filteredSites} />
+      <CampList sites={filteredSites} selectedState={selectedState} setSelectedState={setSelectedState} />
     </main>
   );
 }
