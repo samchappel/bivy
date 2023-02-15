@@ -6,7 +6,6 @@
 
 body {
   background-color: #BFAA72;
-  font-family: sans-serif;
 }
 
 h2 {
@@ -92,8 +91,6 @@ button, [type="submit"] {
   font-family: math;
 }
 
-
-
 form {
   margin: 10px auto;
   width: 400px; 
@@ -111,6 +108,8 @@ form {
   list-style: none;
   display: flex;
   flex-wrap: wrap;
+  justify-content: center;
+  font-family: "Titillium Web", sans-serif;
 }
 
 .card {
@@ -120,7 +119,11 @@ form {
   background-color: #645B16;
   color: #BFAA72;
   overflow: hidden;
+  position: relative;
+  transition: transform 0.6s;
+  transform-style: preserve-3d;
 }
+
 .card .image {
   height: 225px;
   position: relative;
@@ -149,17 +152,14 @@ form {
   width: auto;
   height: auto;
 }
-
-.card .details {
-  padding: 0.5rem;
-
-}  .card .center {
+.card .center {
   text-align: center;
 }
 
-.card .details strong {
-  font-family: serif;
+.card .details {
+  font-family: "Titillium Web", sans-serif;
   font-size: 1rem;
+  padding: 0.5rem;
 }
 
 .emoji-button {
@@ -191,6 +191,7 @@ form {
 .filter button {
   margin: 0 1rem;
 }
+
 nav a {
   display: inline-block;
   margin: 1rem 2rem;
@@ -199,6 +200,7 @@ nav a {
   color: #3B6B35;
   border-bottom: 2px solid #3B6B35;
   transition: 0.1s;
+  font-family: "Titillium Web", sans-serif;
 }
 
 nav a:hover,

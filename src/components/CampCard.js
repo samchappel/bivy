@@ -40,8 +40,9 @@ function CampCard({ site }) {
         ) : (
           <button onClick={toggleFavorite} className="emoji-button favorite">☆</button>
         )}
-        <h3 className="center">{name}</h3>
-        <p className="center">{city}, {state}</p>
+        <h2 className="center">{name}</h2>
+        <h3 className="center">{city}, {state}</h3>
+        <br />
         <p className="center">
         Cost: {displayCost}
         </p>

@@ -1,14 +1,17 @@
 import React from 'react'
 
 function CampDetails({ water, gps, reservations, info }) {
+
+  const reserve = reservations ? 'Needed' : 'Not Needed'
+
   return (
     <div className="center">
-      <strong>{water ? 'Water: Available' : 'Water: BYOW'}</strong>
-      <p>GPS Coordinates: <strong>{gps}</strong></p>
+      <p>{water ? 'Water: Available' : 'Water: BYOW'}</p>
+      <p>GPS Coordinates: {gps}</p>
       <p>
-        Reservations: <strong>{reservations ? 'Needed' : 'Not Needed'}</strong>
+        Reservations: {reserve}
       </p>
-      <p>Additional Info:{info}</p>
+      <p>Additional Info: {info}</p>
     </div>
   )
 }
