@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import NewCampSiteForm from "./NewCampSiteForm";
 import CampList from "./CampList";
 import Search from "./Search";
+import Header from "./Header";
 
 function CampPage() {
 
@@ -29,9 +30,11 @@ function CampPage() {
     return name.includes(search) || cost.includes(search) || city.includes(search) || state.includes(search) || isPrice;
   });
 
+  
+
   return (
     <main>
-      <NewCampSiteForm />
+      <Header />
       <Search searchTerm={searchTerm} updateSearchTerm={updateSearchTerm} />
       <CampList sites={filteredSites} />
     </main>

@@ -5,6 +5,7 @@ import CampPage from "./CampPage";
 import Home from "./Home"
 import About from "./About"
 import Nav from "./Nav"
+import NewCampSiteForm from "./NewCampSiteForm";
 
 
 // function App() {              //I just commented out this code to add in the new code- we can add this back in
@@ -26,11 +27,11 @@ function App() {
         <Route  path="/about">
             <About />
         </Route>
-        <Route path="/sites">
-            <CampPage />
+        <Route path="/submit">
+            <NewCampSiteForm />
         </Route>
         <Route path="/">
-            <Home />
+            <CampPage />
         </Route>
       </Switch>
     </div>
