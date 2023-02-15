@@ -2,7 +2,7 @@ import React from 'react'
 
 function CampDetails({ water, gps, reservations, info }) {
 
-  const reserve = reservations ? 'Needed' : 'Not Needed'
+  const reserve = reservations ? 'Required' : 'Not Required'
 
   return (
     <div className="center">

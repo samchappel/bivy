@@ -7,32 +7,45 @@ const NewCampSiteForm = () => {
 
       <h2 id="submit-title">Submit Your Own</h2>
 
-        <label for="form-imageUrl">Image url:</label>
+        <label htmlFor="form-imageUrl">Image url:</label>
         <input type="text" id="form-imageUrl" name="imageUrl"  />
 
-        <label for="form-location">Site Name:</label>
+        <label htmlFor="form-location">Site Name:</label>
         <input type="text" id="form-title" name="title"  />
 
-        <label for="form-city">City:</label>
+        <label htmlFor="form-city">City:</label>
         <input type="text" id="form-city" name="city"  />
 
-        <label for="form-state">State:</label>
+        <label htmlFor="form-state">State:</label>
         <input type="text" id="form-state" name="state"  />
 
-        <label for="form-tmz">Cost:</label>
+        <label htmlFor="form-cost">Cost:</label>
         <input type="text" id="form-cost" name="cost"  />
 
-        <label for="form-tmz">Camping Period:</label>
+        <label htmlFor="form-period">Camping Period:</label>
         <input type="text" id="form-period" name="period"  />
 
-        <label for="form-tmz">Water:</label>
-        <input type="text" id="form-water" name="water"  />
-
-        <label for="form-tmz">Reservations:</label>
-        <input type="text" id="form-reservations" name="reservations"  />
-
-        <label for="form-tmz">Additional Info:</label>
+        <label htmlFor="form-info">Additional Info:</label>
         <input type="text" id="form-info" name="info"  />
+
+        <label htmlFor="form-water">Water:</label>
+        <select id="form-water" name="water" style={{width: "50%", margin: "0 0 6px"}}>
+          <option value="Available">Available</option>
+          <option value="BYOW">BYOW</option>
+        </select>
+
+        <label htmlFor="form-reserve">Reservations:</label>
+        <select id="form-reservations" name="reservations" style={{width: "50%", margin: "0 0 6px"}}>
+          <option value="Required">Required</option>
+          <option value="Not Required">Not Required</option>
+        </select>
+
+        <label htmlFor="form-fire-ban">Fire Ban:</label>
+        <select id="form-fire-ban" name="fire-ban" style={{width: "50%", margin: "0 0 8px"}}>
+          <option value="Yes">Yes</option>
+          <option value="No">No</option>
+          <option value="Unknown">Unknown</option>
+        </select>
 
       <input type="submit" value="Submit"/>
     </form>
