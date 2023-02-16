@@ -1,6 +1,6 @@
 import React from "react";
 
-function About() {
+function CampingEthics() {
   return (
     <div className="about-container">
       <h2 className="ethics-heading">Camping Ethics</h2>
@@ -74,7 +74,7 @@ function About() {
   )
 }
 
-export default About;
+export default CampingEthics;
         
 
 

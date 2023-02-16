@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import { Switch, Route } from "react-router-dom";
 import Header from "./Header";
 import CampPage from "./CampPage";
-import About from "./About";
+import CampingEthics from "./CampingEthics";
 import Nav from "./Nav";
 import NewCampSiteForm from "./NewCampSiteForm";
 import Favorites from "./Favorites";
@@ -27,8 +27,8 @@ function App() {
     <Header />
       <Nav onChangePage={setPage} />
       <Switch>
-        <Route  path="/about">
-            <About />
+        <Route  path="/camping-ethics">
+            <CampingEthics />
         </Route>
         <Route  path="/favorites">
             <Favorites sites={sites} />
