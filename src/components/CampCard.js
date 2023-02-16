@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import CampDetails from "./CampDetails";
 
-function CampCard({ site, setSites }) {
+function CampCard({ site, setSites, removeSite }) {
   const { id, name, city, state, cost, period, fire, gps, water, reservations, image, info, initialIsFavorite } = site
 
   const [showDetails, setShowDetails] = useState(false);
@@ -28,11 +28,18 @@ function CampCard({ site, setSites }) {
       })
       .then((updatedSite) => {
         setIsFavorite(updatedIsFavorite);
-        setSites((currentSites) =>
-          currentSites.map((site) =>
-            site.id === updatedSite.id ? updatedSite : site
+        // setSites((currentSites) =>
+        //   currentSites.map((site) =>
+        //     site.id === updatedSite.id ? updatedSite : site
+        //   )
+        // );
+        if (!updatedIsFavorite) {
+          removeSite(id);
+        } else {
+          setSites((currentSites) => currentSites.map((site) => site.id === updatedSite.id ? updatedSite : site
           )
-        );
+          )
+        }
       })
       .catch((error) => {
         console.log('Error updating favorite status', error);

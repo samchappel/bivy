@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import CampCard from "./CampCard";
 
-function Favorites() {
+function Favorites( { site }) {
     const [favoriteSites, setFavoriteSites] = useState([]);
   
     useEffect(() => {
@@ -21,8 +21,12 @@ function Favorites() {
         });
     }, []);
 
+    function removeSite(siteId) {
+        setFavoriteSites(favoriteSites.filter((site) => site.id !== siteId))
+    }
+
     const displayFavorites = favoriteSites.map((site) => (
-        <CampCard key={site.id} site={site} setSites={setFavoriteSites} />
+        <CampCard key={site.id} site={site} setSites={setFavoriteSites} removeSite={removeSite} />
       ))
 
     const favorites = favoriteSites.length > 0 ? (<ul className="cards">{displayFavorites}</ul>) : (<p>Choose Some Favorites!</p>)
