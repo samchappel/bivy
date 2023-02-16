@@ -5,14 +5,14 @@ import { useHistory } from "react-router-dom";
 const initialSite = { city:"", state:"", name:"", cost:"", period:"", fire:true, gps:"", water:false, reservations:"", info:"", image:"", initialIsFavorite:""}
 
 
-function NewCampSiteForm({ sites, setSites }) {
+function NewCampSiteForm({ sites, setSites, addSite }) {
   const [ newCampSite, setNewCampSite] = useState(initialSite)
   let history = useHistory();
   
   function handleChange(e){
     setNewCampSite({...newCampSite, [e.target.name]:(e.target.value)})
   }
-  
+
   function handleSubmit(e){
     e.preventDefault();
     fetch('http://localhost:6001/campSites', {
@@ -20,11 +20,11 @@ function NewCampSiteForm({ sites, setSites }) {
       headers: {
         'Content-Type': 'application/json'
       },
-      body: JSON.stringify(newCampSite)
+      body: JSON.stringify(addSite(newCampSite))
     })
       .then(response => {
         if (response.ok) {
-          history.push("/CampPage");
+          history.push("/campsites");
         } else {
           console.log('Error: ', response.statusText);
         }
@@ -74,7 +74,7 @@ function NewCampSiteForm({ sites, setSites }) {
         </select>
 
         <label htmlFor="form-fire-ban">Fire Ban:</label>
-        <select id="form-fire-ban" name="fire" style={{width: "50%", margin: "0 0 8px"}}>
+        <select onChange={handleChange} id="form-fire-ban" name="fire" style={{width: "50%", margin: "0 0 8px"}}>
           <option value={true}>Yes</option>
           <option value={false}>No</option>
         </select>

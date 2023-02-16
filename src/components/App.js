@@ -1,8 +1,9 @@
 import React, { useEffect, useState } from "react";
-import { Switch, Route } from "react-router-dom"
+import { Switch, Route } from "react-router-dom";
+import Header from "./Header";
 import CampPage from "./CampPage";
-import About from "./About"
-import Nav from "./Nav"
+import About from "./About";
+import Nav from "./Nav";
 import NewCampSiteForm from "./NewCampSiteForm";
 import Favorites from "./Favorites";
 
@@ -23,6 +24,7 @@ function App() {
 
   return (
     <div>
+    <Header />
       <Nav onChangePage={setPage} />
       <Switch>
         <Route  path="/about">

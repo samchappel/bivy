@@ -1,7 +1,6 @@
 import React, { useState } from "react";
 import CampList from "./CampList";
 import Search from "./Search";
-import Header from "./Header";
 
 function CampPage({ sites, setSites }) {
 
@@ -27,7 +26,6 @@ function CampPage({ sites, setSites }) {
 
   return (
     <main>
-      <Header />
       <Search searchTerm={searchTerm} updateSearchTerm={updateSearchTerm} />
       <CampList sites={filteredSites} selectedState={selectedState} setSelectedState={setSelectedState} setSites={setSites} />
     </main>
