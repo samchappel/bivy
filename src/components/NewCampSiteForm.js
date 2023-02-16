@@ -2,7 +2,7 @@ import React,{ useState } from "react";
 import { useHistory } from "react-router-dom";
 
 
-const initialSite = { city:"", state:"", name:"", cost:"", period:"", fire:true, gps:"", water:false, reservations:"", info:"", image:""}
+const initialSite = { city:"", state:"", name:"", cost:"", period:"", fire:true, gps:"", water:false, reservations:"", info:"", image:"", initialIsFavorite:""}
 
 
 function NewCampSiteForm({ addSite, sites, setSites }) {
@@ -92,3 +92,33 @@ function NewCampSiteForm({ addSite, sites, setSites }) {
 };
 
 export default NewCampSiteForm;
+
+// sunForm.addEventListener('submit', (e) => {
+//   e.preventDefault();
+//   const location = e.target[1].value;
+//   const image = e.target[0].value;
+//   const city = e.target[2].value;
+//   const state = e.target[3].value;
+//   const cityJoin = city.split(' ').join('%20');
+//   const stateJoin = state.split(' ').join('%20');
+//   const finalJoin = `${cityJoin}%20${stateJoin}`;
+//   fetch(`https://maps.googleapis.com/maps/api/geocode/json?address=${finalJoin}&key=4{apiKey}`)
+//   .then(response => response.json())
+//   .then((data) => {
+//       const lat = data.results[0].geometry.location.lat;
+//       const long = data.results[0].geometry.location.lng;
+//       const tmz = e.target[4].value;
+//       const newCardObj = {
+//           image,
+//           location,
+//           lat,
+//           long,
+//           tmz,
+//           city,
+//           state,
+//           likes: 1
+//       }
+//       getAllSunrises(lat, long, tmz, newCardObj);
+//   })
+//   sunForm.reset();
+// })

@@ -20,18 +20,8 @@ function CampList({ sites, selectedState, setSelectedState, setSites }) {
         <button onClick={() => setSelectedState('Oregon')}>Oregon</button>
         <button onClick={() => setSelectedState('California')}>California</button>
       </div>
-      {/* <div className="searchbar">
-        <label htmlFor="search">Search Camp Sites:</label>
-        <input type="text" placeholder="Search..." />
-      </div> */}
-
       <ul className="cards">{campCards}</ul>
     </section>
-    // <main>
-    //   <ul className="cards">
-    //     {campCards}
-    //   </ul>
-    // </main>
   );
 }
 

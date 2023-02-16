@@ -43,7 +43,7 @@ function CampCard({ site, setSites }) {
     setShowDetails((currentState) => !currentState);
   }
 
-    const fireBan = fire ? <span className="fire">🔥</span> : <span className="fire-ban">😎</span>
+    const fireBan = fire ? <span className="fire">🔥</span> : <img className="fire-ban" src="https://cdn1.iconfinder.com/data/icons/prohibition-3/64/no_fire_flame_prohibition_forbidden_ban_stop-512.png"/>
 
     const favorite = initialIsFavorite ? (
       <button onClick={toggleFavorite} className="emoji-button favorite active">★</button>
