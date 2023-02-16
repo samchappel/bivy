@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import CampCard from "./CampCard";
 
-function Favorites( { site }) {
+function Favorites() {
     const [favoriteSites, setFavoriteSites] = useState([]);
   
     useEffect(() => {
@@ -12,8 +12,8 @@ function Favorites( { site }) {
           }
           throw new Error("Failed to fetch campsites");
         })
-        .then((campsites) => {
-          const favorites = campsites.filter((site) => site.initialIsFavorite);
+        .then((sites) => {
+          const favorites = sites.filter((site) => site.initialIsFavorite);
           setFavoriteSites(favorites);
         })
         .catch((error) => {
@@ -29,13 +29,15 @@ function Favorites( { site }) {
         <CampCard key={site.id} site={site} setSites={setFavoriteSites} removeSite={removeSite} />
       ))
 
-    const favorites = favoriteSites.length > 0 ? (<ul className="cards">{displayFavorites}</ul>) : (<p>Choose Some Favorites!</p>)
+    const favorites = favoriteSites.length > 0 ? (<ul className="cards">{displayFavorites}</ul>) : (<p>Star Your Favorites to Add Here!</p>)
   
     return (
+    <>
+    <h2 className="favoriteHeader">Browse Your Favorites</h2>
       <div className="cards">
-        <h2>Browse Your Favorites</h2>
         {favorites}
       </div>
+    </>
     );
   }
 

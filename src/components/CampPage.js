@@ -1,5 +1,4 @@
-import React, { useState, useEffect } from "react";
-import NewCampSiteForm from "./NewCampSiteForm";
+import React, { useState } from "react";
 import CampList from "./CampList";
 import Search from "./Search";
 import Header from "./Header";

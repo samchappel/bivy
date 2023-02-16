@@ -2,11 +2,11 @@ import React, { useState } from "react";
 import CampDetails from "./CampDetails";
 
 function CampCard({ site, setSites, removeSite }) {
-  const { id, name, city, state, cost, period, fire, gps, water, reservations, image, info, initialIsFavorite } = site
+  const { id, name, city, state, cost, period, fire, gps, water, reservations, image, info, initialIsFavorite } = site;
 
   const [showDetails, setShowDetails] = useState(false);
 
-  const [ isFavorite, setIsFavorite ] = useState(initialIsFavorite)
+  const [ isFavorite, setIsFavorite ] = useState(initialIsFavorite);
 
   function toggleFavorite() {
     const updatedIsFavorite = !isFavorite;
@@ -36,9 +36,7 @@ function CampCard({ site, setSites, removeSite }) {
         if (!updatedIsFavorite) {
           removeSite(id);
         } else {
-          setSites((currentSites) => currentSites.map((site) => site.id === updatedSite.id ? updatedSite : site
-          )
-          )
+          setSites((currentSites) => currentSites.map((site) => site.id === updatedSite.id ? updatedSite : site))
         }
       })
       .catch((error) => {
@@ -50,7 +48,7 @@ function CampCard({ site, setSites, removeSite }) {
     setShowDetails((currentState) => !currentState);
   }
 
-    const fireBan = fire ? <span className="fire">🔥</span> : <img className="fire-ban" src="https://cdn1.iconfinder.com/data/icons/prohibition-3/64/no_fire_flame_prohibition_forbidden_ban_stop-512.png"/>
+    const fireBan = fire ? <span className="fire">🔥</span> : <img className="fire-ban" src="https://cdn1.iconfinder.com/data/icons/prohibition-3/64/no_fire_flame_prohibition_forbidden_ban_stop-512.png" alt="fire-ban"/>
 
     const favorite = initialIsFavorite ? (
       <button onClick={toggleFavorite} className="emoji-button favorite active">★</button>

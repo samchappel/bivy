@@ -5,7 +5,7 @@ import { useHistory } from "react-router-dom";
 const initialSite = { city:"", state:"", name:"", cost:"", period:"", fire:true, gps:"", water:false, reservations:"", info:"", image:"", initialIsFavorite:""}
 
 
-function NewCampSiteForm({ addSite, sites, setSites }) {
+function NewCampSiteForm({ sites, setSites }) {
   const [ newCampSite, setNewCampSite] = useState(initialSite)
   let history = useHistory();
   
@@ -32,12 +32,6 @@ function NewCampSiteForm({ addSite, sites, setSites }) {
       .catch(error => {
         console.log('Error: ', error);
       });
-  }
-
-  function addSite(newCampSite) {
-    const newCampSites = [...sites];
-    newCampSites.push(newCampSite);
-    setSites(newCampSites);
   }
 
   return (
