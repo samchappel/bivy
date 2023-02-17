@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import CampDetails from "./CampDetails";
 
-function CampCard({ site, setSites, removeSite }) {
+function CampCard({ site, setSites, removeSite,  favoriteSites, setFavoriteSites }) {
   const { id, name, city, state, cost, period, fire, gps, water, reservations, image, info, initialIsFavorite } = site;
 
   const [showDetails, setShowDetails] = useState(false);
@@ -28,15 +28,15 @@ function CampCard({ site, setSites, removeSite }) {
       })
       .then((updatedSite) => {
         setIsFavorite(updatedIsFavorite);
-        // setSites((currentSites) =>
-        //   currentSites.map((site) =>
-        //     site.id === updatedSite.id ? updatedSite : site
-        //   )
-        // );
+        setSites((currentSites) =>
+          currentSites.map((site) =>
+            site.id === updatedSite.id ? updatedSite : site
+          )
+        );
         if (!updatedIsFavorite) {
-          removeSite(id);
-        } else {
-          setSites((currentSites) => currentSites.map((site) => site.id === updatedSite.id ? updatedSite : site))
+          setFavoriteSites((currentFavorites) =>
+            currentFavorites.filter((favorite) => favorite.id !== updatedSite.id)
+          );
         }
       })
       .catch((error) => {

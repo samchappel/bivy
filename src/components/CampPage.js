@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import CampList from "./CampList";
 import Search from "./Search";
 
-function CampPage({ sites, setSites }) {
+function CampPage({ sites, setSites, removeSite,  favoriteSites, setFavoriteSites }) {
 
   
   const [searchTerm, setSearchTerm] = useState("");
@@ -27,7 +27,7 @@ function CampPage({ sites, setSites }) {
   return (
     <main>
       <Search searchTerm={searchTerm} updateSearchTerm={updateSearchTerm} />
-      <CampList sites={filteredSites} selectedState={selectedState} setSelectedState={setSelectedState} setSites={setSites} />
+      <CampList sites={filteredSites} selectedState={selectedState} setSelectedState={setSelectedState} setSites={setSites} removeSite={removeSite} favoriteSites={favoriteSites} setFavoriteSites={setFavoriteSites} />
     </main>
   );
 }

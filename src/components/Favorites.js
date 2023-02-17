@@ -1,8 +1,8 @@
-import React, { useState, useEffect } from "react";
+import React, { useEffect } from "react";
 import CampCard from "./CampCard";
 
-function Favorites() {
-    const [favoriteSites, setFavoriteSites] = useState([]);
+function Favorites({ removeSite,  favoriteSites, setFavoriteSites }) {
+    // const [favoriteSites, setFavoriteSites] = useState([]);
   
     useEffect(() => {
       fetch("http://localhost:6001/campSites")
@@ -21,9 +21,9 @@ function Favorites() {
         });
     }, []);
 
-    function removeSite(siteId) {
-        setFavoriteSites(favoriteSites.filter((site) => site.id !== siteId))
-    }
+    // function removeSite(siteId) {
+    //     setFavoriteSites(favoriteSites.filter((site) => site.id !== siteId))
+    // }
 
     const displayFavorites = favoriteSites.map((site) => (
         <CampCard key={site.id} site={site} setSites={setFavoriteSites} removeSite={removeSite} />

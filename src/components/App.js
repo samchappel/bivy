@@ -10,6 +10,11 @@ import Favorites from "./Favorites";
 function App() {
   const [page, setPage] = useState("/")
   const [ sites, setSites ] = useState([]);
+  const [favoriteSites, setFavoriteSites] = useState([]);
+
+  function removeSite(siteId) {
+    setFavoriteSites(favoriteSites.filter((site) => site.id !== siteId))
+}
 
   function addSite(newSite){
     const newSites = [newSite, ...sites]
@@ -31,13 +36,13 @@ function App() {
             <CampingEthics />
         </Route>
         <Route  path="/favorites">
-            <Favorites sites={sites} />
+            <Favorites sites={sites} removeSite={removeSite} favoriteSites={favoriteSites} setFavoriteSites={setFavoriteSites} />
         </Route>
         <Route path="/submit">
             <NewCampSiteForm  addSite={addSite} sites={sites} setSites={setSites} />
         </Route>
         <Route path="/">
-            <CampPage sites={sites} setSites={setSites} addSite={addSite}/>
+            <CampPage sites={sites} setSites={setSites} addSite={addSite} removeSite={removeSite} favoriteSites={favoriteSites} setFavoriteSites={setFavoriteSites} />
         </Route>
       </Switch>
     </div>
