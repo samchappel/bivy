@@ -38,7 +38,7 @@ function NewCampSiteForm({ sites, setSites, addSite }) {
     const cityJoin = city.split(' ').join('%20');
     const stateJoin = state.split(' ').join('%20');
     const finalJoin = `${cityJoin}%20${stateJoin}`;
-    fetch(`https://maps.googleapis.com/maps/api/geocode/json?address=${finalJoin}&key=${apiKey}`)
+    fetch(`https://maps.googleapis.com/maps/api/geocode/json?address=${finalJoin}&key=AIzaSyAB5eyiNK9m0yvGgtFxazs0BwXNd9-u_6w`)
     .then(response => response.json())
     .then((data) => {
         const latitude = data.results[0].geometry.location.lat;

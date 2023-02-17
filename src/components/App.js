@@ -13,8 +13,9 @@ function App() {
   const [favoriteSites, setFavoriteSites] = useState([]);
 
   function removeSite(siteId) {
-    setFavoriteSites(favoriteSites.filter((site) => site.id !== siteId))
-}
+    const updatedFavoriteSites = favoriteSites.filter((site) => site.id !== siteId);
+    setFavoriteSites(updatedFavoriteSites);
+  }
 
   function addSite(newSite){
     const newSites = [newSite, ...sites]

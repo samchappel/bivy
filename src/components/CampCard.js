@@ -10,11 +10,11 @@ function CampCard({ site, setSites, removeSite,  favoriteSites, setFavoriteSites
 
   function toggleFavorite() {
     const updatedIsFavorite = !isFavorite;
-    
+  
     fetch(`http://localhost:6001/campSites/${id}`, {
-      method: 'PATCH',
+      method: "PATCH",
       headers: {
-        'Content-Type': 'application/json',
+        "Content-Type": "application/json",
       },
       body: JSON.stringify({
         initialIsFavorite: updatedIsFavorite,
@@ -24,23 +24,28 @@ function CampCard({ site, setSites, removeSite,  favoriteSites, setFavoriteSites
         if (response.ok) {
           return response.json();
         }
-        throw new Error('Failed to update favorite status');
+        throw new Error("Failed to update favorite status");
       })
       .then((updatedSite) => {
         setIsFavorite(updatedIsFavorite);
-        setSites((currentSites) =>
-          currentSites.map((site) =>
-            site.id === updatedSite.id ? updatedSite : site
-          )
-        );
-        if (!updatedIsFavorite) {
-          setFavoriteSites((currentFavorites) =>
-            currentFavorites.filter((favorite) => favorite.id !== updatedSite.id)
+        if (updatedIsFavorite) {
+          setSites((currentSites) =>
+            currentSites.map((site) =>
+              site.id === updatedSite.id ? updatedSite : site
+            )
           );
+        } else {
+          if (favoriteSites) {
+            setFavoriteSites((currentFavorites) =>
+              currentFavorites.filter((favorite) => favorite.id !== updatedSite.id)
+            );
+          } else {
+            removeSite(id);
+          }
         }
       })
       .catch((error) => {
-        console.log('Error updating favorite status', error);
+        console.log("Error updating favorite status", error);
       });
   }
 
@@ -50,11 +55,11 @@ function CampCard({ site, setSites, removeSite,  favoriteSites, setFavoriteSites
 
     const fireBan = fire ? <span className="fire">🔥</span> : <img className="fire-ban" src="https://cdn1.iconfinder.com/data/icons/prohibition-3/64/no_fire_flame_prohibition_forbidden_ban_stop-512.png" alt="fire-ban"/>
 
-    const favorite = initialIsFavorite ? (
+    const favorite = isFavorite ? (
       <button onClick={toggleFavorite} className="emoji-button favorite active">★</button>
     ) : (
       <button onClick={toggleFavorite} className="emoji-button favorite">☆</button>
-    )
+    );
 
     const displayCost = typeof cost === "string" && cost === "Free" ? "Free" : `$${cost}.00`;
 

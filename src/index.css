@@ -40,6 +40,12 @@ body {
   font-size: 60px;
   font-family: "Titillium Web", sans-serif;
 }
+.bivy-subheader {
+  color: #d9c4b4;
+  text-shadow: black 0px 0px 2px;
+  font-size: 25px;
+  font-family: "Titillium Web", sans-serif;
+}
 
 /* main {
   padding: 0 1rem;
