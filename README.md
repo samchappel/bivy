@@ -24,7 +24,7 @@ So what are you waiting for? Grab your gear, pack up the car, and let us guide y
 Github: <a href="https://github.com/samchappel">samchappel</a><br>
 Email: <a href="mailto:m.samchappel@gmail.com">m.samchappel@gmail.com</a>
 
-#### Steve Passarelli
+### Steve Passarelli
 Github: <a href="https://github.com/Passarellism">Passarellism</a><br>
 Email: <a href="mailto:passarellism@gmail.com">passarellism@gmail.com</a>
 
