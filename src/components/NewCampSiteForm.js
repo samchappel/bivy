@@ -2,37 +2,70 @@ import React,{ useState } from "react";
 import { useHistory } from "react-router-dom";
 
 
-const initialSite = { city:"", state:"", name:"", cost:"", period:"", fire:true, gps:"", water:false, reservations:"", info:"", image:"", gps: "", initialIsFavorite:"false"}
-
+const initialSite = { city:"", 
+state:"", 
+name:"", 
+cost:"", 
+period:"", 
+fire:false, 
+gps:"", 
+water:false, 
+reservations:false, 
+info:"", 
+image:"", 
+initialIsFavorite:false
+};
 
 function NewCampSiteForm({ sites, setSites, addSite }) {
   const [ newCampSite, setNewCampSite] = useState(initialSite)
   let history = useHistory();
   
+  // function handleChange(e){
+  //   setNewCampSite({...newCampSite, [e.target.name]:(e.target.value)})
+  // }
+
   function handleChange(e){
-    setNewCampSite({...newCampSite, [e.target.name]:(e.target.value)})
+    const { name, value } = e.target;
+    const updatedValue = name === 'water' || name === 'reservations' || name === 'fire' ? value === 'true' : value;
+    setNewCampSite({ ...newCampSite, [name]: updatedValue });
   }
+
 
   function handleSubmit(e){
     e.preventDefault();
-    fetch('http://localhost:6001/campSites', {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json'
-      },
-      body: JSON.stringify(newCampSite)
+    const city = e.target[2].value;
+    const state = e.target[3].value;
+    const cityJoin = city.split(' ').join('%20');
+    const stateJoin = state.split(' ').join('%20');
+    const finalJoin = `${cityJoin}%20${stateJoin}`;
+    fetch(`https://maps.googleapis.com/maps/api/geocode/json?address=${finalJoin}&key=${apiKey}`)
+    .then(response => response.json())
+    .then((data) => {
+        const latitude = data.results[0].geometry.location.lat;
+        const longitude = data.results[0].geometry.location.lng;
+        const updatedSite = {...newCampSite, gps: `${latitude}, ${longitude}`};
+        fetch('http://localhost:6001/campSites', {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json'
+          },
+          body: JSON.stringify(updatedSite)
+        })
+        .then(response => {
+          if (response.ok) {
+            history.push("/campsites");
+          } else {
+            console.log('Error: ', response.statusText);
+          }
+          addSite(updatedSite);
+        })
+        .catch(error => {
+          console.log('Error: ', error);
+        });
     })
-      .then(response => {
-        if (response.ok) {
-          history.push("/campsites");
-        } else {
-          console.log('Error: ', response.statusText);
-        }
-        addSite(newCampSite)
-      })
-      .catch(error => {
-        console.log('Error: ', error);
-      });
+    .catch(error => {
+      console.log('Error: ', error);
+    });
   }
 
   return (
@@ -76,8 +109,8 @@ function NewCampSiteForm({ sites, setSites, addSite }) {
 
         <label htmlFor="form-fire-ban">Fire Ban:</label>
         <select onChange={handleChange} id="form-fire-ban" name="fire" style={{width: "50%", margin: "0 0 8px"}}>
-          <option value={true}>Yes</option>
-          <option value={false}>No</option>
+          <option value={false}>Yes</option>
+          <option value={true}>No</option>
         </select>
 
       <button type="submit">Submit</button>
@@ -87,33 +120,3 @@ function NewCampSiteForm({ sites, setSites, addSite }) {
 };
 
 export default NewCampSiteForm;
-
-// sunForm.addEventListener('submit', (e) => {
-//   e.preventDefault();
-//   const location = e.target[1].value;
-//   const image = e.target[0].value;
-//   const city = e.target[2].value;
-//   const state = e.target[3].value;
-//   const cityJoin = city.split(' ').join('%20');
-//   const stateJoin = state.split(' ').join('%20');
-//   const finalJoin = `${cityJoin}%20${stateJoin}`;
-//   fetch(`https://maps.googleapis.com/maps/api/geocode/json?address=${finalJoin}&key=4{apiKey}`)
-//   .then(response => response.json())
-//   .then((data) => {
-//       const lat = data.results[0].geometry.location.lat;
-//       const long = data.results[0].geometry.location.lng;
-//       const tmz = e.target[4].value;
-//       const newCardObj = {
-//           image,
-//           location,
-//           lat,
-//           long,
-//           tmz,
-//           city,
-//           state,
-//           likes: 1
-//       }
-//       getAllSunrises(lat, long, tmz, newCardObj);
-//   })
-//   sunForm.reset();
-// })
