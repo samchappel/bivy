@@ -29,4 +29,4 @@ Github: <a href="https://github.com/Passarellism">Passarellism</a><br>
 Email: <a href="mailto:passarellism@gmail.com">passarellism@gmail.com</a>
 
 ## Project Status
-Pack your bags and get your tents ready because our team is working hard to bring you some exciting new features! Keep your eyes peeled for updates as we pitch our way towards the next big adventure.
+Pack your bags and get your tents ready because our team is pitching the way and working hard to bring you some exciting new features.
