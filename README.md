@@ -15,7 +15,7 @@ So what are you waiting for? Grab your gear, pack up the car, and let us guide y
 
 ## Visual
 
- ![gif walkthrough](https://github.com/samchappel/sol/blob/main/sol-visual.gif)
+ Coming soon!
 
 
 ## Contributors
