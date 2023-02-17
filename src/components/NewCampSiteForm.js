@@ -2,7 +2,7 @@ import React,{ useState } from "react";
 import { useHistory } from "react-router-dom";
 
 
-const initialSite = { city:"", state:"", name:"", cost:"", period:"", fire:true, gps:"", water:false, reservations:"", info:"", image:"", initialIsFavorite:""}
+const initialSite = { city:"", state:"", name:"", cost:"", period:"", fire:true, gps:"", water:false, reservations:"", info:"", image:"", gps: "", initialIsFavorite:"false"}
 
 
 function NewCampSiteForm({ sites, setSites, addSite }) {
