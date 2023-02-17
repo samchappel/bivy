@@ -5,55 +5,56 @@
 }
 
 body {
-  background-color: #BFAA72;
+  background-color: #756864;
 }
 
-h2 {
+/* h2 {
   margin-bottom: 1rem;
-}
-
-button {
-  padding: 0.25rem 1rem;
-  font-family: inherit;
-  border: none;
-  cursor: pointer;
-}
-
-button.primary {
-  background-color: var(--green);
-  color: white;
-}
+} */
 
 .app {
   margin: 0 auto;
   max-width: 1200px;
 }
 
+.header {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  border: 1px solid #333;
+  padding: 15px 20px 18px 18px;
+  border-radius: 5px;
+  box-shadow: 2px 5px 5px #333;
+  background-image: url("https://preview.redd.it/d7nkza6qux1z.jpg?auto=webp&s=54206e0c20eeb5ed6af92c75a97d28b6e30f7ad8");
+  background-repeat: no-repeat;
+  background-size: 100%;
+  width: 100%;
+  height: 300px;
+}
+
 .bivy {
-  font-size: 2.5em;
-  font-weight: 900;
-  text-align: center;
-  padding: 0.5rem 0;
-  color: #645B16;
+  color: #d9c4b4;
+  text-shadow: black 0px 0px 2px;
+  font-size: 60px;
+  font-family: "Titillium Web", sans-serif;
 }
 
-.logo {
-  font-size: 1.25em;
-  padding-left: 0.5rem;
-}
-
-main {
+/* main {
   padding: 0 1rem;
-  background-color: #BFAA72
-}
+  background-color: #756864;
+} */
 
 .fire-ban {
   display: flex;
   align-items: center;
+  height: 20px;
+  width: 20px;
 }
 
 .searchbar {
-  color: #645B16;
+  color: white;
   padding: 1rem;
   display: flex;
   flex-direction: column;
@@ -75,7 +76,7 @@ input {
   margin: 3px;
 }
 
-input[type=submit] {
+/* input[type=submit] {
   border: none;
   background-color: #3B6B35;
   color: white;
@@ -83,12 +84,18 @@ input[type=submit] {
   padding: 3px;
   font-size: large;
   font-weight: bold;
-
-}
+} */
 
 button, [type="submit"] {
   cursor: pointer;
+  background-color: #9d8d89;;
+  color: white;
   font-family: math;
+}
+button, [type="submit"]:hover {
+  /* background-color: #4CAF50;  */
+  background-color: #798c90;
+  color: white;
 }
 
 form {
@@ -96,7 +103,10 @@ form {
   width: 400px; 
   display: flex;
   flex-direction: column;
-  color: #637F42;
+  color: #d9c4b4;
+  border: solid;
+  border-color: white;
+  padding: 10px;
 }
 
 #submit-title {
@@ -110,18 +120,16 @@ form {
   flex-wrap: wrap;
   justify-content: center;
   font-family: "Titillium Web", sans-serif;
+  align-items: flex-start;
 }
 
 .card {
   margin: 1rem;
   border-radius: 5px;
   width: 300px;
-  background-color: #645B16;
-  color: #BFAA72;
-  overflow: hidden;
+  background-color: #9d8d89;
+  color: #d9c4b4;
   position: relative;
-  transition: transform 0.6s;
-  transform-style: preserve-3d;
 }
 
 .card .image {
@@ -144,6 +152,8 @@ form {
   top: 0;
   left: 0;
   padding: 0.25rem;
+  height: 40px;
+  width: 40px;
 }
 
 .card .image img {
@@ -172,7 +182,7 @@ form {
 
 .emoji-button.favorite {
   color: transparent;
-  text-shadow: 0 0 0 gray;
+  text-shadow: 0 0 0 black;
 }
 
 .emoji-button.favorite.active,
@@ -189,7 +199,21 @@ form {
 }
 
 .filter button {
+  font-size: 1rem;
   margin: 0 1rem;
+  background-color: #9d8d89;
+  color: white;
+  transition-duration: 0.4s;
+}
+.filter button:hover {
+  background-color: #798c90;
+  color: white;
+}
+button {
+  padding: 0.25rem 1rem;
+  font-family: inherit;
+  border: none;
+  cursor: pointer;
 }
 
 nav a {
@@ -197,15 +221,79 @@ nav a {
   margin: 1rem 2rem;
   text-decoration: none;
   font-size: 1.2em;
-  color: #3B6B35;
-  border-bottom: 2px solid #3B6B35;
+  color: #d9c4b4;
+  border-bottom: 2px solid #d9c4b4;
   transition: 0.1s;
   font-family: "Titillium Web", sans-serif;
 }
 
 nav a:hover,
 nav a:active {
-  color: #4C4A41;
-  border-bottom: 2px solid #4C4A41;
+  color: #798c90;;
+  border-bottom: 2px solid #9d8d89;
+}
+.favoriteHeader {
+  text-align: center;
+  font-size: 25px;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  color: #d9c4b4;
 }
 
+.about-container {
+  background-color: #3b3d3f;
+  color: #d9c4b4;
+  padding: 20px;
+  margin: 20px;
+}
+
+.about-heading {
+  font-size: 2rem;
+  margin-bottom: 10px;
+}
+
+.ethics-heading {
+  color: #d9c4b4;
+  font-size: 40px;
+  text-align: center;
+}
+
+.about-subheading {
+  font-size: 1.5rem;
+  margin-top: 30px;
+  margin-bottom: 10px;
+  color: #798c90;
+}
+
+.about-text {
+  font-size: 1.1rem;
+  margin-bottom: 20px;
+}
+
+.about-list {
+  list-style-type: circle;
+  margin-left: 30px;
+  margin-bottom: 20px;
+}
+
+.about-list-item {
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+.about-list-item strong {
+  color: #abb9c3;
+}
+
+.about-heading {
+  margin-top: 0;
+  color: #798c90;
+}
+
+.about-heading + .about-list {
+  margin-top: 0;
+}
+
+.about-text + .about-list {
+  margin-top: 0;
+}
