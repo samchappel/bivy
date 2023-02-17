@@ -20,7 +20,7 @@ function NewCampSiteForm({ sites, setSites, addSite }) {
       headers: {
         'Content-Type': 'application/json'
       },
-      body: JSON.stringify(addSite(newCampSite))
+      body: JSON.stringify(newCampSite)
     })
       .then(response => {
         if (response.ok) {
@@ -28,6 +28,7 @@ function NewCampSiteForm({ sites, setSites, addSite }) {
         } else {
           console.log('Error: ', response.statusText);
         }
+        addSite(newCampSite)
       })
       .catch(error => {
         console.log('Error: ', error);
