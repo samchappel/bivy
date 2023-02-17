@@ -15,7 +15,7 @@ So what are you waiting for? Grab your gear, pack up the car, and let us guide y
 
 ## Visual
 
- Coming soon!
+![bivy-visual](https://github.com/samchappel/bivy/blob/main/public/bivy-visual3.gif)
 
 
 ## Contributors
